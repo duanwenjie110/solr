@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ 	<modelVersion>4.0.0</modelVersion>
+ 	<artifactId>solr</artifactId>
+	<groupId>1.0.0.1</groupId>
+    <version>1.0.0.1</version>
+  <packaging>war</packaging>
+  <name>solr</name>
+  <description>警务融合智慧系统</description>
+  <build>
+    <finalName>solr</finalName>
+    
+     <plugins>
+            <plugin>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <artifactId>findbugs-maven-plugin</artifactId>
+                       <version>3.0.1</version>
+                       <configuration>
+                                   <threshold>High</threshold>
+                                   <effort>Default</effort>
+                                   <findbugsXmlOutput>true</findbugsXmlOutput>
+                                   <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+                                   <xmlOutput>true</xmlOutput>
+                                <!--    <findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory> -->
+                       </configuration>
+               </plugin> 
+          </plugins>
+  </build>
+     
+</project>

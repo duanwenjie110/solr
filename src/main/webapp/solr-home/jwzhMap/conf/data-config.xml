@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<dataConfig>   
+<dataSource type="JdbcDataSource"   
+		  driver="com.mysql.jdbc.Driver"   
+		  url="jdbc:mysql://192.168.3.241:3306/wt-sso"   
+		  user="root"   
+		  password="wtoe@123456" batchSize="-1"/>   
+<document>   
+	<entity name="mapPoi" pk="id" query="SELECT id,name,location,address,province,city,area,telephone,detail,street_id,uid,createTime FROM biz_map_poi"
+	    deltaImportQuery="SELECT id,name,location,address,province,city,area,telephone,detail,street_id,uid,createTime FROM biz_map_poi WHERE id>='${dih.delta.id}'"
+        deltaQuery="SELECT id FROM biz_map_poi where createTime>= '${dataimporter.last_index_time}'">
+		 <field column="id" name="id"/> 
+		 <field column="name" name="name"/> 
+		 <field column="location" name="location"/> 
+		 <field column="address" name="address"/> 
+		 <field column="province" name="province"/> 
+		 <field column="city" name="city"/> 
+		 <field column="area" name="area"/> 
+		 <field column="telephone" name="telephone"/> 
+		 <field column="detail" name="detail"/>
+		 <field column="street_id" name="streetId"/>
+		 <field column="uid" name="uid"/>
+		 <field column="createTime" name="createTime"/>
+	</entity>   
+</document>   
+
+</dataConfig>
